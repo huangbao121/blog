@@ -20,3 +20,7 @@ def listpic(request):
 
 def newslistpic(request):
     return render(request, 'newslistpic.html')
+
+
+def base(request):
+    return render(request,'base.html')
