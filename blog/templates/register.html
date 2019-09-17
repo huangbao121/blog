@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    用户名&nbsp;: <input type="text" name="username"> <br>
+    密&nbsp;&nbsp;&nbsp;&nbsp;码: <input type="password" name="password"> <br>
+    确认密码: <input type="password" name="password2"><br>
+    注&nbsp;&nbsp;&nbsp;&nbsp;册: <input type="submit" value="注册">
+</form>
+{% if re %}
+{{ re }}
+{% endif %}
+{% if content %}
+{{ content }}
+{% endif %}
+
+</body>
+</html>

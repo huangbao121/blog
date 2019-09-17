@@ -24,7 +24,7 @@ SECRET_KEY = 'jfkwe%9%5zwmg8!ni*f)3v*hq665@y4an&p^ohc282v-x@&vm4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appBlog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -123,3 +126,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+# 指定媒体文件上传路径
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
+# 基于ckeditor的长传地址
+CKEDITOR_UPLOAD_PATH = 'static/upload'
+# ckeditor上传图片使用的模板
+CKEDITOR_IMAGE_BACKEND = 'pillow'
